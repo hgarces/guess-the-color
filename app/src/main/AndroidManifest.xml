@@ -1,0 +1,39 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.henriquegarces.guessthecolor">
+
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/about_label"
+            android:theme="@android:style/Theme.Dialog">
+        </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/action_settings"
+            android:theme="@android:style/Theme.Material.Light">
+        </activity>
+        <activity
+            android:name=".GameActivity"
+            android:configChanges="orientation">
+        </activity>
+        <activity android:name=".WrongActivity"
+            android:theme="@style/NoActionBar"></activity>
+        <activity android:name=".RightActivity"
+            android:theme="@style/NoActionBar"></activity>
+        <activity android:name=".HighScoreActivity"
+            android:label="@string/leaderboards_label"></activity>
+        <activity android:name=".PauseActivity"></activity>
+    </application>
+
+</manifest>
