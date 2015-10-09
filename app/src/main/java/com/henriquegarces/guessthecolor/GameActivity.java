@@ -55,6 +55,7 @@ public class GameActivity extends Activity implements View.OnClickListener, View
     private int thisGuy;
     private int score = 0;
     private int position;
+    private int mActionBarSize;
     private String rgb;
     private boolean isRight = false;
     private int mX, mY;
@@ -184,6 +185,7 @@ public class GameActivity extends Activity implements View.OnClickListener, View
         circleButton3 = (CircleButton) findViewById(R.id.circle_button3);
         circleButton3.setOnClickListener(this);
         circleButton3.setOnTouchListener(this);
+        mActionBarSize = GUIUtils.getActionBarHeight(this);
         if(savedInstanceState != null) {
             Log.v(TAG, "savedInstanceState not null");
             score = savedInstanceState.getInt("score");
@@ -249,11 +251,12 @@ public class GameActivity extends Activity implements View.OnClickListener, View
         int [] location = new int[2];
         view.getLocationOnScreen(location);
         location[0] += (view.getWidth() / 2);
-        location[1] += (view.getHeight()  / 2) - GUIUtils.getStatusBarHeight(this);
+        location[1] += (view.getHeight() / 2) - mActionBarSize;
         bundle = new Bundle();
         bundle.putInt(EXTRA_COLOR, target);
         bundle.putIntArray("location", location);
         bundle.putInt("position", position);
+        bundle.putInt("actionBarSize", mActionBarSize);
         GUIUtils.showRevealEffect(revealView, location[0], location[1], revealAnimationListener);
     }
 
@@ -263,12 +266,13 @@ public class GameActivity extends Activity implements View.OnClickListener, View
         int [] location = new int[2];
         view.getLocationOnScreen(location);
         location[0] += (view.getWidth() / 2);
-        location[1] += (view.getHeight() / 2);
+        location[1] += (view.getHeight() / 2) - mActionBarSize;
         bundle = new Bundle();
         bundle.putInt(EXTRA_COLOR, thisGuy);
         bundle.putString(EXTRA_SCORE, score + "");
         bundle.putIntArray("location", location);
         bundle.putInt("position", position);
+        bundle.putInt("actionBarSize", mActionBarSize);
         GUIUtils.showRevealEffect(revealView, location[0], location[1], revealAnimationListener);
     }
 
@@ -333,7 +337,6 @@ public class GameActivity extends Activity implements View.OnClickListener, View
     private void animateButtonsIn() {
         Log.d(TAG, "animateButtonsIn");
         for (int i = 0; i < bgViewGroup.getChildCount(); i++) {
-            Log.d(TAG, i+" child");
             View child = bgViewGroup.getChildAt(i);
             child.animate()
                     .setStartDelay(100 + i * DELAY)

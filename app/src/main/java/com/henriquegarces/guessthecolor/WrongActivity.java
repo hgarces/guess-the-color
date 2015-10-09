@@ -42,9 +42,10 @@ public class WrongActivity extends Activity implements OnClickListener {
 
         int color = bundle.getInt(GameActivity.EXTRA_COLOR);
         String score = "SCORE: " + bundle.getString(GameActivity.EXTRA_SCORE);
+        int actionBarSize = bundle.getInt("actionBarSize");
         int[] location = bundle.getIntArray("location");
         cx = location[0];
-        cy = location[1];
+        cy = location[1] + actionBarSize;
         pos = bundle.getInt("position");
         linearLayout.setBackgroundColor(color);
         scoreTextView.setText(score);

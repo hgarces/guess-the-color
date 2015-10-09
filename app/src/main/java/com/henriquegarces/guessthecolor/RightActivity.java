@@ -37,7 +37,7 @@ public class RightActivity extends Activity {
         int color = bundle.getInt(GameActivity.EXTRA_COLOR);
         int[] location = bundle.getIntArray("location");
         cx = location[0];
-        cy = location[1];
+        cy = location[1] + bundle.getInt("actionBarSize");
         pos = bundle.getInt("position");
         linearLayout.setBackgroundColor(color);
 

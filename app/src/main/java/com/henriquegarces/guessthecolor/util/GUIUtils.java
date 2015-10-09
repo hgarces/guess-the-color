@@ -3,6 +3,7 @@ package com.henriquegarces.guessthecolor.util;
 import android.animation.Animator;
 import android.content.Context;
 import android.util.Log;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewAnimationUtils;
 
@@ -42,12 +43,15 @@ public class GUIUtils {
         anim.start();
     }
 
-    public static int getStatusBarHeight(Context c) {
-
+    public static int getActionBarHeight(Context c) {
+        TypedValue tv = new TypedValue();
         int result = 0;
+
+        if(c.getTheme().resolveAttribute(android.R.attr.actionBarSize, tv, true))
+            result = c.getResources().getDimensionPixelSize(tv.resourceId);
         int resourceId = c.getResources().getIdentifier("status_bar_height", "dimen", "android");
         if (resourceId > 0) {
-            result = c.getResources().getDimensionPixelSize(resourceId);
+            result += c.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
     }
