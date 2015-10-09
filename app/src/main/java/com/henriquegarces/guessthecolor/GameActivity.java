@@ -249,7 +249,7 @@ public class GameActivity extends Activity implements View.OnClickListener, View
         int [] location = new int[2];
         view.getLocationOnScreen(location);
         location[0] += (view.getWidth() / 2);
-        location[1] += (view.getHeight()  / 2);
+        location[1] += (view.getHeight()  / 2) - GUIUtils.getStatusBarHeight(this);
         bundle = new Bundle();
         bundle.putInt(EXTRA_COLOR, target);
         bundle.putIntArray("location", location);

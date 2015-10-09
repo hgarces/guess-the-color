@@ -43,7 +43,6 @@ public class RightActivity extends Activity {
 
         colors = new ColorUtils().getRandomColor(3);
 
-        nextColorButton.setBackgroundColor(color);
         nextColorButton.setBackgroundResource(R.drawable.button_shape);
         nextColorButton.setOnClickListener(new View.OnClickListener() {
             @Override

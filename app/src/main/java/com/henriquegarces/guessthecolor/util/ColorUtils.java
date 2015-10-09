@@ -67,4 +67,12 @@ public class ColorUtils {
 
         return rgb;
     }
+
+    public int getRandomColor() {
+        int red = (int)Math.floor(Math.random() * 256);
+        int green = (int)Math.floor(Math.random() * 256);
+        int blue = (int)Math.floor(Math.random() * 256);
+
+        return Color.rgb(red, green, blue);
+    }
 }

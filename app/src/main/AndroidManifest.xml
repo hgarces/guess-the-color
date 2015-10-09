@@ -16,7 +16,7 @@
         <activity
             android:name=".AboutActivity"
             android:label="@string/about_label"
-            android:theme="@android:style/Theme.Dialog">
+            android:theme="@android:style/Theme.Material.Dialog">
         </activity>
         <activity
             android:name=".SettingsActivity"
@@ -33,7 +33,8 @@
             android:theme="@style/NoActionBar"></activity>
         <activity android:name=".HighScoreActivity"
             android:label="@string/leaderboards_label"></activity>
-        <activity android:name=".PauseActivity"></activity>
+        <activity android:name=".PauseActivity"
+            android:theme="@style/NoActionBar"></activity>
     </application>
 
 </manifest>

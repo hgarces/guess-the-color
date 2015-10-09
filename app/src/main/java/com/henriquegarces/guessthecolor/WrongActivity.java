@@ -53,10 +53,8 @@ public class WrongActivity extends Activity implements OnClickListener {
         revealView.setBackgroundColor(colors[pos]);
 
         playAgainButton.setOnClickListener(this);
-        playAgainButton.setBackgroundColor(color);
         playAgainButton.setBackgroundResource(R.drawable.button_shape);
         exitToMenuButton.setOnClickListener(this);
-        exitToMenuButton.setBackgroundColor(color);
         exitToMenuButton.setBackgroundResource(R.drawable.button_shape);
 
 
