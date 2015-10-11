@@ -77,4 +77,6 @@ public class RightActivity extends Activity {
         public void onAnimationRepeat(Animator animation) {}
     };
 
+    @Override
+    public void onBackPressed() {}
 }

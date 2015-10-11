@@ -10,8 +10,8 @@
 
         <ImageButton
             android:id="@+id/play_button"
-            android:layout_width="120dp"
-            android:layout_height="120dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
             android:background="@drawable/oval_ripple"
             android:contentDescription="@string/play_label"
             android:src="@drawable/ic_play_arrow_white_48dp"

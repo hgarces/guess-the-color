@@ -38,14 +38,14 @@
             android:layout_width="64dip"
             android:layout_height="64dip"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="15dp"/>
 
         <com.henriquegarces.guessthecolor.util.CircleButton
             android:id="@+id/circle_button3"
             android:layout_width="64dip"
             android:layout_height="64dip"
             android:layout_marginLeft="15dp"
-            android:layout_marginRight="15dp" />
+            android:layout_marginRight="15dp"/>
     </LinearLayout>
 
         <TextView

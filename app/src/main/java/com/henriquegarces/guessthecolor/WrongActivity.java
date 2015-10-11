@@ -107,4 +107,7 @@ public class WrongActivity extends Activity implements OnClickListener {
         @Override
         public void onAnimationRepeat(Animator animation) {}
     };
+
+    @Override
+    public void onBackPressed() {}
 }

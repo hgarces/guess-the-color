@@ -38,6 +38,7 @@ public class PauseActivity extends Activity implements View.OnClickListener {
         }
         else if(id == R.id.exit_to_menu_button) {
             Intent intent = new Intent(PauseActivity.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         }

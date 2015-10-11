@@ -10,7 +10,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
@@ -31,7 +30,7 @@ import java.util.Random;
 /**
  * Created by henrique on 25/09/15.
  */
-public class GameActivity extends Activity implements View.OnClickListener, View.OnTouchListener{
+public class GameActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "Guess the Color";
     public static final String EXTRA_SCORE = "com.android.henrique.guessthecolor.SCORE";
@@ -58,7 +57,6 @@ public class GameActivity extends Activity implements View.OnClickListener, View
     private int mActionBarSize;
     private String rgb;
     private boolean isRight = false;
-    private int mX, mY;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -178,13 +176,10 @@ public class GameActivity extends Activity implements View.OnClickListener, View
         rgbColorTextView = (TextView) findViewById(R.id.rgb_color_textview);
         circleButton1 = (CircleButton) findViewById(R.id.circle_button1);
         circleButton1.setOnClickListener(this);
-        circleButton1.setOnTouchListener(this);
         circleButton2 = (CircleButton) findViewById(R.id.circle_button2);
         circleButton2.setOnClickListener(this);
-        circleButton2.setOnTouchListener(this);
         circleButton3 = (CircleButton) findViewById(R.id.circle_button3);
         circleButton3.setOnClickListener(this);
-        circleButton3.setOnTouchListener(this);
         mActionBarSize = GUIUtils.getActionBarHeight(this);
         if(savedInstanceState != null) {
             Log.v(TAG, "savedInstanceState not null");
@@ -215,6 +210,7 @@ public class GameActivity extends Activity implements View.OnClickListener, View
     }
 
     protected void generateRandomColors() {
+
         isRight = false;
         circleButton1.setColor(colors[0]);
         circleButton2.setColor(colors[1]);
@@ -321,17 +317,6 @@ public class GameActivity extends Activity implements View.OnClickListener, View
     @Override
     public void onBackPressed() {
         startActivity(new Intent(GameActivity.this, PauseActivity.class));
-    }
-
-    @Override
-    public boolean onTouch(View v, MotionEvent event) {
-        if (event.getAction() == MotionEvent.ACTION_DOWN) {
-            if(v.getId() == R.id.circle_button1 || v.getId() == R.id.circle_button2 || v.getId() == R.id.circle_button3) {
-                mX = (int) event.getX();
-                mY = (int) event.getY();
-            }
-        }
-        return false;
     }
 
     private void animateButtonsIn() {
