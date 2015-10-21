@@ -53,16 +53,16 @@ public class PauseActivity extends Activity implements View.OnClickListener {
         LinearLayout rootLayout = (LinearLayout) findViewById(R.id.root_layout);
         rootLayout.setBackgroundColor(mColorUtils.getRandomColor());
         Button unpauseButton = (Button) findViewById(R.id.unpause_button);
-        unpauseButton.setBackgroundResource(R.drawable.button_shape);
+        //unpauseButton.setBackgroundResource(R.drawable.button_shape);
         unpauseButton.setOnClickListener(this);
         Button restartButton = (Button) findViewById(R.id.restart_button);
-        restartButton.setBackgroundResource(R.drawable.button_shape);
+        //restartButton.setBackgroundResource(R.drawable.button_shape);
         restartButton.setOnClickListener(this);
         Button exitButton = (Button) findViewById(R.id.exit_to_menu_button);
-        exitButton.setBackgroundResource(R.drawable.button_shape);
+        //exitButton.setBackgroundResource(R.drawable.button_shape);
         exitButton.setOnClickListener(this);
         Button settingsButton = (Button) findViewById(R.id.action_settings);
-        settingsButton.setBackgroundResource(R.drawable.button_shape);
+        //settingsButton.setBackgroundResource(R.drawable.button_shape);
         settingsButton.setOnClickListener(this);
     }
 
